@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <list>
+#include <math.h>
 
 using namespace std;
 
@@ -185,6 +186,23 @@ void zadanie1() {
     printf("n: %i\nSuma liczb pozytywnych: %i\nIlosc liczb pozytywnych: %i\nSrednia liczb negatywnych: %0.1f.\nIlosc liczb negatywnych. %i\n", 
         n, res_pos[0], res_pos[1], res_neg[0], (int) res_neg[1]);
  }
+
+
+ // "Program, ktory wczytuje kolejne liczby calkowite do momentu wczytania zera.\n";
+ // "Oblicza i wypisuje pierwiastek z wczytanej liczby.\n\n";
+void zadanie132() {
+    while (n != 0) {
+        cout << "Program, ktory wczytuje kolejne liczby calkowite do momentu wczytania zera.\n";
+        cout << "Oblicza i wypisuje pierwiastek z wczytanej liczby.\n\n";
+
+        int n = read_int_negative("Wprowadz liczbe calkowita.\n");
+        if (n == 0)
+            return
+
+        root = sqrt(n);
+        print(root);
+    }
+}
 
 
 int main() {
