@@ -1,2 +1,3 @@
 C:\Users\trebu\Documents\Cpp\cwiczenia-2\cwiczenie3\Zadanie1.3\x64\Debug\Zadanie1.3.exe
 C:\Users\trebu\Documents\Cpp\cwiczenie3\Zadanie1.3\x64\Debug\Zadanie1.3.exe
+C:\Users\trebu\Documents\Cpp\cwiczenie3\cwiczenia3\pp-cwiczenia3\x64\Debug\Zadanie1.3.exe
