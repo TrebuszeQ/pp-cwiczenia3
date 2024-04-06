@@ -2,17 +2,28 @@
 #include <string>
 #include <list>
 #include <math.h>
+#include <format>
 
 using namespace std;
 
 
 // funkcja wyswietla wiadomosc i przyjmuje wartosc in
 string read_input_str(string message) {
-    string in = "";
+    string in;
     cout << message << endl;
     cin >> in;
 
     return in;
+}
+
+
+string read_input_line(string message) {
+    string in;
+    cout << message << endl;
+    cin >> in;
+    string part = in;
+    getline(cin, in);
+    return part + in;
 }
 
 
@@ -188,20 +199,115 @@ void zadanie1() {
  }
 
 
- // "Program, ktory wczytuje kolejne liczby calkowite do momentu wczytania zera.\n";
- // "Oblicza i wypisuje pierwiastek z wczytanej liczby.\n\n";
-void zadanie132() {
+ // Program, ktory wczytuje kolejne liczby calkowite do momentu wczytania zera
+ // Oblicza i wypisuje pierwiastek z wczytanej liczby
+void zadanie2() {
+    int n = -1;
     while (n != 0) {
         cout << "Program, ktory wczytuje kolejne liczby calkowite do momentu wczytania zera.\n";
         cout << "Oblicza i wypisuje pierwiastek z wczytanej liczby.\n\n";
 
-        int n = read_int_negative("Wprowadz liczbe calkowita.\n");
-        if (n == 0)
-            return
+        n = read_int_negative("Wprowadz liczbe calkowita:\n");
+        if (n == 0) {
+            cout << "Wyjscie.";
+            return;
+        }
+            
 
-        root = sqrt(n);
-        print(root);
+        double root = sqrt(n);
+        printf("Pierwiastek: %0.2f.\n", root);
     }
+}
+
+
+// oblicza sume okreslona wzorem i wypisuje obliczona wartosc
+// sigma (od 1 do k) = (( 3 * i + 1.2 ) / ( 2 * i ))
+void zadanie3() {
+    cout << "Program oblicza sume okreslona wzorem i wypisuje obliczona wartosc.\n";
+    cout << "Wzor: sigma (od 1 do k) = (( 3 * i + 1.2 ) / ( 2 * i )).\n\n";
+
+    int k = read_int_positive("Wprowadz dla k liczbe calkowita wieksza od 0:\n");
+    int i = 1;
+    double s = 0;
+    
+    for (i = 1; i <= k; i++) {
+        s += ((3 * i + 1.2) / (2 * i));
+    }
+
+    printf("sigma = %0.2f.\n\n", s);
+}
+
+
+// zwraca ilosc pieter
+int get_floors() {
+    int floors;
+
+    do {
+        floors = read_int_positive("Wprowadz calkowita liczbe pieter hotelu [nie mniej niz 0]:\n");
+    } while (floors < 1);
+
+    return floors;
+}
+
+
+// odczytuje ilosc pokoi
+int get_rooms() {
+    int rooms = 5;
+   
+    do {
+        rooms = read_int_positive("Wprowadz ilosc pokoi na pietrze [nie mniej niz 5]:\n");
+    } while (rooms < 5);
+    
+    return rooms;
+}
+
+
+// zwraca ilosc zajetych miejsc
+int get_occupied_rooms(int rooms) {
+    int n = 0;
+    
+    do {
+        n = read_int_positive("Wprowadz ilosc zajetych pokoi na pietrze:\n");
+    } while (n > rooms);
+    
+    return n;
+}
+
+
+// Program oblicza i wyswietla oblozenie hotelu na podstawie liczby pieter i pokoi.
+void zadanie4() {
+    cout << "Program oblicza i wyswietla oblozenie hotelu na podstawie liczby pieter i pokoi.\n\n";
+    string name = read_input_line("Podaj nazwe hotelu:\n");
+    int floors = get_floors();
+    int rooms = 0;
+    int sum_rooms = 0;
+    int rooms_o = 0;
+    int sum_rooms_o = 0;
+    float rooms_o_p = 0;
+    string message = "W hotelu " + name + " jest " + to_string(floors) + " pieter.\n";
+
+    for (int i = 0; i < floors; i++) {
+        cout << "Pietro: " << i << ".\n";
+
+        if (i == 13) { 
+            message += "Na pietrze 13 nie ma pokoi.\n";
+            continue;
+        }
+
+        else {
+            rooms = get_rooms();
+            sum_rooms += rooms;
+            rooms_o = get_occupied_rooms(rooms);
+            sum_rooms_o += rooms_o;
+            rooms_o_p = 0;
+            rooms_o_p = ((rooms_o * 1.0f) / (rooms * 1.0f)) * 100;
+            message += format("Na pietrze {} jest  {}% pokoi zajetych.\n", to_string(i), to_string(rooms_o_p));
+        }
+    }
+
+    rooms_o_p = ((sum_rooms_o * 1.0f) / (sum_rooms * 1.0f)) * 100;
+    cout << message;
+    printf("Hotel ma %i pokoi, %0.2f pokoi jest zajetych.\n\n", sum_rooms, rooms_o_p);
 }
 
 
@@ -226,12 +332,15 @@ int main() {
                 break;
 
             case 2:
+                zadanie2();
                 break;
 
             case 3:
+                zadanie3();
                 break;
 
             case 4:
+                zadanie4();
                 break;
 
             case 5:

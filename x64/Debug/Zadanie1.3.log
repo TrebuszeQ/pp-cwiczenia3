@@ -1,5 +1,5 @@
 ﻿  Zadanie1.3.cpp
-C:\Users\trebu\Documents\Cpp\cwiczenie3\Zadanie1.3\Zadanie1.3.cpp(21,13): warning C4834: discarding return value of function with 'nodiscard' attribute
-C:\Users\trebu\Documents\Cpp\cwiczenie3\Zadanie1.3\Zadanie1.3.cpp(158,21): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\trebu\Documents\Cpp\cwiczenie3\Zadanie1.3\Zadanie1.3.cpp(163,21): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-  Zadanie1.3.vcxproj -> C:\Users\trebu\Documents\Cpp\cwiczenie3\Zadanie1.3\x64\Debug\Zadanie1.3.exe
+C:\Users\trebu\Documents\Cpp\cwiczenie3\cwiczenia3\pp-cwiczenia3\Zadanie1.3.cpp(33,13): warning C4834: discarding return value of function with 'nodiscard' attribute
+C:\Users\trebu\Documents\Cpp\cwiczenie3\cwiczenia3\pp-cwiczenia3\Zadanie1.3.cpp(170,21): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\trebu\Documents\Cpp\cwiczenie3\cwiczenia3\pp-cwiczenia3\Zadanie1.3.cpp(175,21): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  Zadanie1.3.vcxproj -> C:\Users\trebu\Documents\Cpp\cwiczenie3\cwiczenia3\pp-cwiczenia3\x64\Debug\Zadanie1.3.exe
